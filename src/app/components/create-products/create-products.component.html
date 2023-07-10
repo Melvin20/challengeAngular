@@ -1,0 +1,58 @@
+
+<div class="content">
+    <div class="panel">
+        <div class="register">
+            <h1>Formulario de Registro</h1>
+          </div>
+          <hr>
+          <br><br>
+          <form [formGroup]="formGroup">
+
+          <div class="colum">
+          <div class="line" >
+          <label class="lb" for="id">ID</label>
+          <label class="label" for="name">Nombre</label> <br>
+          <input type="text" class="input " name="id" formControlName="id"  [ngStyle]="{'border-color':(formGroup.get('id')?.errors && formGroup.get('id')?.dirty)  == true? 'red':''}">
+          <input type="text" class="input-two" name="name" formControlName="name" [ngStyle]="{'border-color':(formGroup.get('name')?.errors && formGroup.get('name')?.dirty) == true? 'red':''}">
+          
+          <br>
+          <label class="lbv" [ngStyle]="{'visibility':formGroup.get('id')?.errors && formGroup.get('id')?.dirty && (formGroup.get('id')?.hasError('required') || formGroup.get('id')?.hasError('minlength') || formGroup.get('id')?.hasError('maxlength')||formGroup.get('id')?.hasError('validateId'))?'visible':'hidden'}" >ID no vàlida</label>
+          <label class="lbv lbv-id" *ngIf="formGroup.get('name')?.errors && formGroup.get('name')?.dirty && (formGroup.get('name')?.hasError('required') || formGroup.get('name')?.hasError('minlength') ||formGroup.get('name')?.hasError('maxlength'))">Nombre no valido</label>
+      
+         </div>
+          </div>
+
+
+          <div class="colum">
+
+         <div class="line">
+            <label class="lb" for="description">Descripciòn</label>
+            <label class="lb-logo" for="logo">Logo</label> <br>
+            <input type="text" class="input" name="description" formControlName="description" [ngStyle]="{'border-color':(formGroup.get('description')?.errors && formGroup.get('description')?.dirty) == true? 'red':''}">
+            <input type="text" class="input-two" name="logo" formControlName="logo" [ngStyle]="{'border-color':(formGroup.get('logo')?.errors && formGroup.get('logo')?.dirty) == true? 'red':''}"><br>
+            <label class="lbv" [ngStyle]="{'visibility':formGroup.get('description')?.errors && formGroup.get('description')?.dirty && (formGroup.get('description')?.hasError('required') || formGroup.get('description')?.hasError('minlength') || formGroup.get('description')?.hasError('maxlength'))?'visible':'hidden'}">Descripciòn no valida</label>
+            <label class="lbv lbv-logo" *ngIf="formGroup.get('logo')?.errors && formGroup.get('logo')?.dirty && formGroup.get('logo')?.hasError('required')">Logo Requerido</label>          
+        </div>
+        </div>
+        <div class="colum">
+
+        <div class="line">
+            <label class="lb" for="date_release">Fecha Liberaciòn</label>
+            <label class="lb-date" >Fecha Revisiòn</label> <br>
+            <input type="date" class="input "  [(ngModel)]="dateL"  (change)="setValue()" name="date_release" formControlName="date_release" [ngStyle]="{'border-color':(formGroup.get('date_release')?.errors && formGroup.get('date_release')?.dirty) == true? 'red':''}">
+            <input type="date" class="input-two dis" name="dateR" value="{{dateR}}" formControlName="date_revision"[ngStyle]="{'border-color':(formGroup.get('date_revision')?.errors && formGroup.get('date_revision')?.dirty) == true? 'red':''}" readonly ><br>
+            <label class="lbv" [ngStyle]="{'visibility':formGroup.get('date_release')?.errors && formGroup.get('date_release')?.dirty && (formGroup.get('date_release')?.hasError('required') || formGroup.get('date_release')?.hasError('validateDate'))?'visible':'hidden'}">Fecha no valida</label>
+
+           </div>  
+            
+        </div>
+    </form>
+
+        <div class="colum">
+        <button class="button" (click)="reset()"> <b> Reiniciar </b></button>
+        <button class="button sendButton" [disabled]="formGroup.invalid" (click)="send()">  <b> Enviar </b></button>  
+       </div>
+       <button class="button" routerLink="/"> <b> Regresar </b></button>
+
+        </div>
+</div>

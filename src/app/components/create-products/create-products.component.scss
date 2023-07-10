@@ -1,0 +1,83 @@
+.content{
+display: flex;
+justify-content: space-around;
+border-radius: 10px;
+margin-top: 20vh;
+}
+.panel{
+background-color: white;
+width: 60vw;
+border-radius: 10px;
+
+}
+.register{
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.input{
+    height: 40px !important;
+    border-radius: 5px;
+    border-color:rgb(173, 175, 177);
+    width: 300px;
+}
+.date{
+    width: 300px;
+}
+.colum{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.label{
+    margin-left: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lb{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lb-logo{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 280px;
+}
+.lb-date{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 240px;
+}
+.input-two{
+    height: 40px !important;
+    border-radius: 5px;
+    border-color:rgb(173, 175, 177);
+    width: 300px;
+    margin-left: 55px;
+}
+.line{
+    margin-bottom: 20px;
+}
+.button{
+    margin:35px;
+    padding: 16px;
+    border-radius: 10px;
+    border-color:white;
+}
+.sendButton{
+    background-color: rgb(235, 235, 27);
+}
+.columValidate{
+    display: flex;
+    justify-content: space-evenly;
+}
+.lbv{
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
+.lbv-id{
+   margin-left: 280px;
+}
+.lbv-logo{
+    margin-left: 210px;
+ }
+ .dis{
+    background-color: beige;
+ }
